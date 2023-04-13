@@ -18,17 +18,15 @@ public class Main {
 
         // Ask for Names in a two player game
         if (game.equalsIgnoreCase("two-player")) {
-            System.out.println("Player 1: Enter your name: ");
-            String player1Name = in.nextLine();
-            player1.setName(player1Name);
-            System.out.println("Player 2: Enter your name: ");
-            String player2Name = in.nextLine();
-            System.out.println("Hello " + player1Name + " and " + player2Name + "!");
+            player1.selectPlayerName();
+            player2.selectPlayerName();
+            System.out.println("Hello " + player1.getName() + " and " + player2.getName() + "!");
+
 
             while (!gameOver) {
-                System.out.print(player1Name + " ");
+                System.out.print(player1.getName() + " ");
                 player1.selectPlayerMove();
-                System.out.print(player2Name + " ");
+                System.out.print(player2.getName() + " ");
                 player2.selectPlayerMove();
 
                 // Checks for  winner in a two-player game
@@ -38,14 +36,12 @@ public class Main {
                 } else if (player1.getPlayerMove().equals("rock") && player2.getPlayerMove().equals("scissors") ||
                         (player1.getPlayerMove().equals("scissors") && player2.getPlayerMove().equals("paper")) ||
                         (player1.getPlayerMove().equals("paper") && player2.getPlayerMove().equals("rock"))) {
-                    System.out.println(player1Name + " wins");
+                    System.out.println(player1.getName() + " wins");
                 } else {
-                    System.out.println(player2Name + " wins");
+                    System.out.println(player2.getName() + " wins");
                 }
                 gameOver = true;
-
             }
-
         } else {
             // Player plays against the computer
             int comp = (int) (Math.random() * 3);
@@ -57,12 +53,10 @@ public class Main {
             } else {
                 computerMove = "scissors";
             }
-            System.out.println("Player 1: Enter your name: ");
-            String player1Name = in.nextLine();
-            player1.setName(player1Name);
-            System.out.println("Computer move: " + computerMove);
-            System.out.print(player1Name + " ");
+            player1.selectPlayerName();
+            System.out.print(player1.getName() + " ");
             player1.selectPlayerMove();
+            System.out.println("Computers move is: " + computerMove);
 
             // Checks for  winner in a two-player game
             if (player1.getPlayerMove().equals(computerMove)) {
@@ -71,17 +65,15 @@ public class Main {
             } else if (player1.getPlayerMove().equals("rock") && computerMove.equals("scissors") ||
                     (player1.getPlayerMove().equals("scissors") && computerMove.equals("paper")) ||
                     (player1.getPlayerMove().equals("paper") && computerMove.equals("rock"))) {
-                System.out.println(player1Name + " wins");
+                System.out.println(player1.getName() + " wins");
             } else {
                 System.out.println("computer wins");
             }
-            gameOver = true;
         }
 
         gameOver = true;
         return "";
     }
-
 
     public static void main(String[] args) {
         playGame();
