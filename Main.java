@@ -44,27 +44,19 @@ public class Main {
             }
         } else {
             // Player plays against the computer
-            int comp = (int) (Math.random() * 3);
-            String computerMove = "";
-            if (comp == 0) {
-                computerMove = "rock";
-            } else if (comp == 1) {
-                computerMove = "paper";
-            } else {
-                computerMove = "scissors";
-            }
+            computer.selectPlayerMove();
             player1.selectPlayerName();
             System.out.print(player1.getName() + " ");
             player1.selectPlayerMove();
-            System.out.println("Computers move is: " + computerMove);
+            System.out.println("Computers move is: " + computer.getPlayerMove());
 
-            // Checks for  winner in a two-player game
-            if (player1.getPlayerMove().equals(computerMove)) {
+            // Checks for  winner in player vs computer game
+            if (player1.getPlayerMove().equals(computer.getPlayerMove())) {
                 System.out.println("It's a tie");
 
-            } else if (player1.getPlayerMove().equals("rock") && computerMove.equals("scissors") ||
-                    (player1.getPlayerMove().equals("scissors") && computerMove.equals("paper")) ||
-                    (player1.getPlayerMove().equals("paper") && computerMove.equals("rock"))) {
+            } else if (player1.getPlayerMove().equals("rock") && computer.getPlayerMove().equals("scissors") ||
+                    (player1.getPlayerMove().equals("scissors") && computer.getPlayerMove().equals("paper")) ||
+                    (player1.getPlayerMove().equals("paper") && computer.getPlayerMove().equals("rock"))) {
                 System.out.println(player1.getName() + " wins");
             } else {
                 System.out.println("computer wins");
