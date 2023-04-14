@@ -1,8 +1,12 @@
 public abstract class Player {
+
+    // Stores players name
     private String name;
+
+    // Stores player move
     private String playerMove;
 
-
+    // Sets Player name
     public void setPlayerName(String name) {
         this.name = name;
     }
@@ -28,6 +32,9 @@ public abstract class Player {
         this.playerMove = playerMove;
     }
     public abstract void selectPlayerMove();
+
+
+
 }
 
 
