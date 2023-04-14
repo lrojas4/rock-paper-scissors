@@ -35,6 +35,16 @@ public class Main {
         Global.computer.selectPlayerMove();
         System.out.print(Global.player1.getName() + " ");
         Global.player1.selectPlayerMove();
+
+        // Verify if move is Valid
+        if (!Global.player1.getPlayerMove().equalsIgnoreCase("rock") &&
+                !Global.player1.getPlayerMove().equalsIgnoreCase("paper") &&
+                !Global.player1.getPlayerMove().equalsIgnoreCase("scissors")) {
+            System.out.println("Not a valid move");
+            System.out.print(Global.player1.getName() + " ");
+            Global.player1.selectPlayerMove();
+        }
+
         System.out.println("Computers move is: " + Global.computer.getPlayerMove());
 
         // Checks for  winner in player vs computer game
@@ -60,8 +70,27 @@ public class Main {
 
         System.out.print(Global.player1.getName() + " ");
         Global.player1.selectPlayerMove();
+
+        // Verify if player 1 move is valid
+        if (!Global.player1.getPlayerMove().equalsIgnoreCase("rock") &&
+                !Global.player1.getPlayerMove().equalsIgnoreCase("paper") &&
+                !Global.player1.getPlayerMove().equalsIgnoreCase("scissors")) {
+            System.out.println("Not a valid move");
+            System.out.print(Global.player1.getName() + " ");
+            Global.player1.selectPlayerMove();
+        }
+
         System.out.print(Global.player2.getName() + " ");
         Global.player2.selectPlayerMove();
+
+        // Verify if move is Valid
+        if (!Global.player2.getPlayerMove().equalsIgnoreCase("rock") &&
+                !Global.player2.getPlayerMove().equalsIgnoreCase("paper") &&
+                !Global.player2.getPlayerMove().equalsIgnoreCase("scissors")) {
+            System.out.println("Not a valid move");
+            System.out.print(Global.player2.getName() + " ");
+            Global.player2.selectPlayerMove();
+        }
 
         // Checks for  winner in a two-player game
         if (Global.player1.getPlayerMove().equals(Global.player2.getPlayerMove())) {
@@ -78,8 +107,6 @@ public class Main {
             scores.add(2);
         }
         displayScores(scores);
-
-
     }
 
     // Play game
