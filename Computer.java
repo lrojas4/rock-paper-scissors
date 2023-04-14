@@ -1,5 +1,6 @@
 
 public class Computer extends Player {
+    // Sets player name
     public void selectPlayerName() {
         setPlayerName("Computer");
     }
