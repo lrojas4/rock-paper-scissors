@@ -1,4 +1,4 @@
-# tic-tac-toe
+# rock-paper-scissors
 
 ## Overview
 A rock, paper, scissors game that can be played either as a two-player or a player vs a computer.
