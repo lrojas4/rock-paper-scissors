@@ -13,5 +13,4 @@ A rock, paper, scissors game that can be played either as a two-player or a play
 * Player is able to pick between continuing to play, exiting the game or switching the game mode (type of game)
 
 ## Future Features
-* Refactoring code
-* Incorporate exception handling
+* Refactor code
